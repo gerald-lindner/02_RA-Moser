@@ -69,11 +69,12 @@ class ramoser(scrapy.Spider): #scrapy class, contains everything
     def parse(self,response):
         try: #here i still have the problem of not getting spaces out
             name_v=response.xpath('//strong/text()')[4].extract()
+            name_v=name_v.strip(' ')
             name_v=name_v.replace('\r', '')
             name_v=name_v.replace('"', '')
             name_v=name_v.replace('\n', '')
             name_v=name_v.replace('*', '')
-            name_v=name_v.strip()
+            print(name_v)
             op1.append(name_v)
         except: 
             op1.append("NA")
@@ -123,6 +124,8 @@ class ramoser(scrapy.Spider): #scrapy class, contains everything
             
         try:
             date_v=response.xpath('//span/text()')[4].extract()
+            date_v=date_v.replace('\r', '')
+            date_v=date_v.replace('\n', '')
             op9.append(date_v)
         except:
             op9.append("NA")
