@@ -32,7 +32,7 @@ txt2 = open(path2,'r')
 text2=txt2.read()
 
 #create patterns
-pattern1= "Rechung =C3=B6ffnen =\n<(.*\n.*)"
+pattern1= "Rechung =C3=B6ffnen <(.*\n.*)"
 pattern2='Subject.*\n(.*)\n\n(.*)\n(.*)\n(.*)'
 
 #create dataframe
@@ -65,11 +65,11 @@ op8=[]
 op9=[]
 class ramoser(scrapy.Spider): #scrapy class, contains everything
     name = 'ramoser'
-    start_urls = m1[0:10] #for experiment reasosn
+    start_urls = m1[0:len(m1)] #for experiment reasosn
     def parse(self,response):
         try: #here i still have the problem of not getting spaces out
             name_v=response.xpath('//strong/text()')[4].extract()
-            name_v=name_v.strip(' ')
+            name_v=name_v.strip()
             name_v=name_v.replace('\r', '')
             name_v=name_v.replace('"', '')
             name_v=name_v.replace('\n', '')
