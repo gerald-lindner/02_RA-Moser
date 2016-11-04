@@ -1,4 +1,4 @@
-'''
+  '''
 Created on 13. Juli 2016
 
 @author: geri
@@ -118,6 +118,7 @@ class ramoser(scrapy.Spider): #scrapy class, contains everything
             geld_v=geld_v.replace('\r', '')
             geld_v=geld_v.replace("'", '')
             geld_v=geld_v.replace('\n', '')
+            geld_v=geld_v.replace('.', ',')
             op8.append(geld_v)
         except: 
             op8.append("NA")
