@@ -1,12 +1,12 @@
-  '''
-Created on 13. Juli 2016
 
-@author: geri
-'''
 #new start on 13. July 2016
 #next: either enter extract_lunks here to get out name data, etc, or import everything from links
 # some names are wrong, either because of " or of some other sign
 #extract links from file rather than csv; get rid of that
+
+#linux=usr/local/lib/python3.5/dist-packages/scrapy/settings/default
+#in settings change: download_delay, and cookies_disabled
+
 
 #in default_settings.py
 import scrapy #the crawler import
