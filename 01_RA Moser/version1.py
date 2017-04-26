@@ -6,7 +6,7 @@
 
 #linux=usr/local/lib/python3.5/dist-packages/scrapy/settings/default
 #in settings change: download_delay, and cookies_disabled
-
+#windows: C:\Users\geri\AppData\Local\Programs\Python\Python36-32\Lib\site-packages\scrapy-1.3.3-py3.6.egg\scrapy\settings
 
 #in default_settings.py
 import scrapy #the crawler import
